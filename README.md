@@ -1,3 +1,23 @@
+## Experimental fork
+
+This is an experimental fork of PedalinoMini™. Its goal is to minimize latency between a button push and the actual sending of the MIDI message.
+In the original version of PedalinoMini the MIDI message is sent *after* the switch debounce interval (20 ms by default) introduced by the AceButton library.
+
+For this fork the AceButton library was [modified](https://github.com/he-leon/AceButton) to fire an event at the start of the debouncing period. PedalinoMini was extended with a "Fast Press" mode. This means an action will be triggered at the start of the debounce period. 
+
+Latency between button press and sending of the MIDI message could be reduced from 22ms to around 300µs. 
+
+TODO:
+* Testing for false triggerings and other glitches which might occur because of the modification of AceButton
+* Fully integrating the "Fast Press" mode to PedalinoMini. E.g. Display stuff, etc. 
+
+
+Note: WiFi scanning in the WebUI was disabled as for my enviroment (esp32doit-devkit-v1) it prevented the page from being loaded correctly. At the moment you have to enter your WiFi SSID manually in the form if you want to use this fork.
+
+_________________
+
+
+
 [![](./images/PedalinoMini-Case-1.png)](https://www.youtube.com/watch?v=PgAAQd82aIo)
 
 # PedalinoMini™
