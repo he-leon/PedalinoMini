@@ -120,6 +120,7 @@ void start_services()
   for (int i = 0; i < 4; i++)
     oscRemoteIp[i] |= (localMask[i] ^ B11111111);
 
+  DPRINT("OSC broadcast address:");
   // Set outcoming OSC broadcast ip/port
   oscUDPout.connect(oscRemoteIp, oscRemotePort);
 }

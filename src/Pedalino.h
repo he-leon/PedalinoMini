@@ -133,7 +133,7 @@ typedef uint8_t   byte;
 #include <AceButton.h>                  // https://github.com/bxparks/AceButton
 using namespace ace_button;
 
-#define DEBOUNCE_INTERVAL      20
+#define DEBOUNCE_INTERVAL      10
 #define PED_PRESS_TIME        200
 #define PED_DOUBLE_PRESS_TIME 400
 #define PED_LONG_PRESS_TIME   500
@@ -204,6 +204,8 @@ const char *pedalModeName[] = {"", "None", "Momentary 1", "Latch", "Analog", "Jo
 #define PED_PRESS_2_L           PED_PRESS_2 + PED_PRESS_L
 #define PED_PRESS_1_2_L         PED_PRESS_1 + PED_PRESS_2 + PED_PRESS_L
 
+
+#define IS_FAST_SINGLE_PRESS_ENABLED(x)    (((x)&1)==0)
 #define IS_SINGLE_PRESS_ENABLED(x)         (((x)&1)==1)
 #define IS_DOUBLE_PRESS_ENABLED(x)         (((x)&2)==2)
 #define IS_LONG_PRESS_ENABLED(x)           (((x)&4)==4)
@@ -221,18 +223,22 @@ const char *pedalPressModeName[] = {"None", "1", "2", "12", "L", "1L","2L", "12L
 #define PED_BPM_PLUS            8
 #define PED_BPM_MINUS           9
 
-#define PED_EVENT_PRESS         AceButton::kEventPressed
-#define PED_EVENT_RELEASE       AceButton::kEventReleased
-#define PED_EVENT_CLICK         AceButton::kEventClicked
-#define PED_EVENT_DOUBLE_CLICK  AceButton::kEventDoubleClicked
-#define PED_EVENT_LONG_PRESS    AceButton::kEventLongPressed
-#define PED_EVENT_REPEAT        AceButton::kEventRepeatPressed
-#define PED_EVENT_LONG_RELEASED AceButton::kEventLongReleased
+
+
+#define PED_EVENT_PRESS             AceButton::kEventPressed
+#define PED_EVENT_RELEASE           AceButton::kEventReleased
+#define PED_EVENT_CLICK             AceButton::kEventClicked
+#define PED_EVENT_DOUBLE_CLICK      AceButton::kEventDoubleClicked
+#define PED_EVENT_LONG_PRESS        AceButton::kEventLongPressed
+#define PED_EVENT_REPEAT            AceButton::kEventRepeatPressed
+#define PED_EVENT_LONG_RELEASED     AceButton::kEventLongReleased
 #define PED_EVENT_MOVE          7
 #define PED_EVENT_JOG           8
 #define PED_EVENT_NONE          9
+#define PED_EVENT_DEBOUNCE_PRESS     AceButton::kEventDebouncingPress
+#define PED_EVENT_DEBOUNCE_RELEASE   AceButton::kEventDebouncingRelease
 
-const char *eventName[] = {"Press", "Release", "Click", "Double Click", "Long Press", "Repeat Pressed", "Long Released", "Move", "Jog", "None"};
+const char *eventName[] = {"Fast Press", "Press", "Release", "Click", "Double Click", "Long Press", "Repeat Pressed", "Long Released", "Move", "Jog", "None", "Fast Press"};
 
 #define PED_LINEAR              0
 #define PED_LOG                 1
