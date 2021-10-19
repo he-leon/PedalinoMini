@@ -133,7 +133,7 @@ typedef uint8_t   byte;
 #include <AceButton.h>                  // https://github.com/bxparks/AceButton
 using namespace ace_button;
 
-#define DEBOUNCE_INTERVAL      10
+#define DEBOUNCE_INTERVAL      20
 #define PED_PRESS_TIME        200
 #define PED_DOUBLE_PRESS_TIME 400
 #define PED_LONG_PRESS_TIME   500
@@ -491,8 +491,8 @@ uint32_t vref = 1100;
 #define LOG_TAG           "PedalinoESP"
 //#define DPRINT(...)       ESP_LOGI(LOG_TAG, __VA_ARGS__)
 //#define DPRINTLN(...)     ESP_LOGI(LOG_TAG, __VA_ARGS__)
-#define DPRINT(...)       SERIALDEBUG.printf(__VA_ARGS__)
-#define DPRINTLN(...)     { SERIALDEBUG.printf( __VA_ARGS__ ); SERIALDEBUG.println(); }
+#define DPRINT(...)       {SERIALDEBUG.printf("%lu: ", millis()); SERIALDEBUG.printf(__VA_ARGS__); }
+#define DPRINTLN(...)     {SERIALDEBUG.printf("%lu: ", millis()); SERIALDEBUG.printf(__VA_ARGS__); SERIALDEBUG.println(); }
 #endif
 
 #ifndef DPRINT

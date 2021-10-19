@@ -198,7 +198,7 @@ void setup()
 #endif
 
 #ifdef SERIALDEBUG
-  SERIALDEBUG.begin(115200);
+  SERIALDEBUG.begin(115200, SERIAL_8N1);
   SERIALDEBUG.setDebugOutput(true);   // enable diagnostic output and printf() output
 #endif
 
