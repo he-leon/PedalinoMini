@@ -11,6 +11,9 @@ TODO:
 * Testing for false triggerings and other glitches which might occur because of the modification of AceButton
 * Fully integrating the "Fast Press" mode to PedalinoMini. E.g. Display stuff, etc. 
 
+
+Note: WiFi scanning in the WebUI was disabled as for my enviroment (esp32doit-devkit-v1) it prevented the page from being loaded correctly. At the moment you have to enter your WiFi SSID manually in the form if you want to use this fork.
+
 _________________
 
 
