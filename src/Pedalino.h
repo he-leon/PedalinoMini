@@ -238,7 +238,7 @@ const char *pedalPressModeName[] = {"None", "1", "2", "12", "L", "1L","2L", "12L
 #define PED_EVENT_DEBOUNCE_PRESS     AceButton::kEventDebouncingPress
 #define PED_EVENT_DEBOUNCE_RELEASE   AceButton::kEventDebouncingRelease
 
-const char *eventName[] = {"Fast Press", "Press", "Release", "Click", "Double Click", "Long Press", "Repeat Pressed", "Long Released", "Move", "Jog", "None", "Fast Press"};
+const char *eventName[] = {"Press", "Release", "Click", "Double Click", "Long Press", "Repeat Pressed", "Long Released", "Move", "Jog", "None", "Fast Press"};
 
 #define PED_LINEAR              0
 #define PED_LOG                 1
