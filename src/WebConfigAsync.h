@@ -1496,15 +1496,6 @@ void get_pedals_page(unsigned int start, unsigned int len) {
     page += F("</div>");
 
     page += F("<div class='form-check form-switch'>");
-    page += F("<input class='form-check-input' type='checkbox' id='function0Check");
-    page += String(i) + F("' name='function0") + String(i) + F("'");
-    if (IS_FAST_SINGLE_PRESS_ENABLED(pedals[i-1].pressMode)) page += F(" checked");
-    page += F(">");
-    page += F("<label class='form-check-label' for='function1Check");
-    page += String(i) + F("'>Fast single Press</label>");
-    page += F("</div>");
-
-    page += F("<div class='form-check form-switch'>");
     page += F("<input class='form-check-input' type='checkbox' id='function1Check");
     page += String(i) + F("' name='function1") + String(i) + F("'");
     if (IS_SINGLE_PRESS_ENABLED(pedals[i-1].pressMode)) page += F(" checked");
